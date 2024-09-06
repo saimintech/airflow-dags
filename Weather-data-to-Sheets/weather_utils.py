@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 def get_current_weather(WEATHER_API):
     try:
-        location = 'Lahore'
+        location = WEATHER_LOCATION
         date_now = datetime.now()
         timezone = timedelta(hours=7)
         jkt_time = date_now + timezone
@@ -21,7 +21,7 @@ def get_current_weather(WEATHER_API):
         response = requests.get(f'http://api.weatherapi.com/v1/current.json?key={WEATHER_API}&q={location}')
         weather_api_data = response.json()
 
-        webapp_url = 'https://script.google.com/macros/s/AKfycbwmh82pjRk21Y8Y7spKvqPFWy7TmOYiz5sXR_-YDuLN7segrJqP4QgFPLbx-15eViCl4g/exec'
+        webapp_url = 'https://script.google.com/macros/s/AKfycbwmh82pjRk21Y8Y7spKvqPFWy7TmOYiz5sXR_-YDuLN7segrJqP4QgFPLbx-15eViCl4g/exec?location='+WEATHER_LOCATION
         # Post the weather data to the web app
         post_data_to_webapp(weather_api_data, webapp_url)
 
