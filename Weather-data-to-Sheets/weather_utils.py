@@ -50,10 +50,3 @@ def post_data_to_webapp(json_data, webapp_url):
         print("Data posted successfully!")
     else:
         print(f"Failed to post data. Status code: {response.status_code}")
-
-# Weather API response
- 
-# Replace with your web app URL
-webapp_url = "https://your-webapp-url"
-
-
