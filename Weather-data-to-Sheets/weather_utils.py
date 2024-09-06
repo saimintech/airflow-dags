@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime, timedelta
 
-def get_current_weather(WEATHER_API):
+def get_current_weather(WEATHER_API, WEATHER_LOCATION):
     try:
         location = WEATHER_LOCATION
         date_now = datetime.now()
