@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 
 def get_current_weather(WEATHER_API):
     try:
-        location = 'Jakarta'
+        location = 'Lahore'
         date_now = datetime.now()
         timezone = timedelta(hours=7)
         jkt_time = date_now + timezone
