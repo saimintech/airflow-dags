@@ -14,7 +14,7 @@ default_args = {
     "retry_delay":timedelta(minutes=15)
 }
 
-with DAG('dag_weather', schedule_interval='59 16 * * *', default_args=default_args, catchup=False, tags=['weather']) as dag:
+with DAG('dag_weather', schedule_interval='0/5 * * * *', default_args=default_args, catchup=False, tags=['weather']) as dag:
 
     retrieve_data = PythonOperator(
         task_id = 'task_id_1',
