@@ -10,8 +10,8 @@ WEATHER_LOCATION = Variable.get('WEATHER_API_LOCATION')
 
 default_args = {
     "start_date":datetime(2023, 8, 11),
-    "retries":10,
-    "retry_delay":timedelta(minutes=15)
+    "retries":1,
+    "retry_delay":timedelta(minutes=5)
 }
 
 with DAG('dag_weather', schedule_interval='0/15 * * * *', default_args=default_args, catchup=False, tags=['weather']) as dag:
