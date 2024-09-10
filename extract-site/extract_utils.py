@@ -54,11 +54,14 @@ def process_main(EP, SCRAPE_SITE, KEYWORDS):
               sub_data['job_tags'] = jobTags[len(jobTags)-1].replace("\n", ",")
               sub_data['link'] = href
     
-              data.append(sub_data)
+              data.append(sub_data
+                         
+            data_json = json.dumps(data)
+            post_data_to_webapp(data, webapp_url)
+    
         except Exception as e:
           print("error")
           print(e)
           pass
     
-    data_json = json.dumps(data)
-    post_data_to_webapp(data, webapp_url)
+    
