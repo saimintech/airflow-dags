@@ -18,7 +18,7 @@ default_args = {
 with DAG('dag_extraction', schedule_interval='0/15 * * * *', default_args=default_args, catchup=False, tags=['extraction']) as dag:
 
     retrieve_data = PythonOperator(
-        task_id = 'task_id_1',
+        task_id = 'task_id_2',
         python_callable = process_main,
         op_args = [EP, SITE, KEYWORDS]
     )
