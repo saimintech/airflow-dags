@@ -32,9 +32,8 @@ def process_main(EP, SCRAPE_SITE, KEYWORDS):
     for keyword in KEYWORDS:
         webapp_url = 'https://script.google.com/macros/s/AKfycby555e_VnQFJQ6IQr_OKya9Eq74yz53VGU-Wm2IA1hGkHEgaB0j5rO7xVbFQAsbXZyt/exec?keyword='+keyword
         try:
-          keyword =parse.parse_qs(parse.urlparse(keyword).query)['q'][0]
-          split_url = parse.urlsplit(keyword)
-          base_domain = split_url.scheme+"://"+split_url.netloc
+          split_url = SCRAPE_SITE.split("/")
+          base_domain = split_url[0]+"//"+split_url[2]
     
           API_EP = EP +'/get?url='+ SCRAPE_SITE + keyword +'&tag=article'
           website_content = get_website_content(API_EP)
