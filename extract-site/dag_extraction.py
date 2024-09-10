@@ -19,6 +19,6 @@ with DAG('dag_weather', schedule_interval='0/15 * * * *', default_args=default_a
 
     retrieve_data = PythonOperator(
         task_id = 'task_id_1',
-        python_callable = get_current_weather,
+        python_callable = process_main,
         op_args = [EP, SITE, KEYWORDS]
     )
